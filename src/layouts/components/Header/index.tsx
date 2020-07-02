@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './index.less';
 import {Affix,Dropdown, Menu} from 'antd';
 import {UserOutlined} from '@ant-design/icons'
-import {Link, useLocation} from "umi";
+import {Link, useLocation,history} from "umi";
 
 const MenuItem = Menu.Item;
 
@@ -13,8 +13,11 @@ const Menus = [{
     name: '用户',
     key: '/user'
 },{
-    name: '周报',
-    key: '/weekly'
+    name: '日报',
+    key: '/report'
+},{
+    name: '动态页面',
+    key: '/dynamic'
 }]
 
 export default () => {
@@ -24,16 +27,16 @@ export default () => {
     const {pathname} = useLocation();
 
     useEffect(() => {
-        const key: string = pathname.length > 2 ? ('/' + pathname.split('/')[1]) : '/dashboard';
+        const key: string = pathname.length > 1 ? ('/' + pathname.split('/')[1]) : '/dashboard';
         setSelectedKeys([key] as never)
     }, [pathname])
 
 
     // 事件
     const handleLogOutClick = ()=>{
-        console.log('logout')
+        localStorage.clear()
+        history.replace('/login')
     }
-
 
     // 导航菜单
     const MemoMenu = React.memo(() =>

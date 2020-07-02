@@ -346,3 +346,10 @@ embed{
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px white inset;
 }
+
+.w-e-toolbar{
+    border: 0 none !important;
+}
+.w-e-text-container{
+    border: 0 none !important;
+}

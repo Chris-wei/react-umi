@@ -1,7 +1,6 @@
 import service from '../../utils/service'
-import * as types from './types'
 
 // 登录
-export function login(data: types.LoginParams) {
+export function login(data?: any) {
     return service.post('/api/pass/login', data)
 }

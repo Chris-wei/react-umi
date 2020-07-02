@@ -16,7 +16,7 @@ export default ({children}: any) => {
     }
 
     return (
-        <ConfigProvider locale={zhCN} componentSize={"middle"} input={{autoComplete: undefined}}>
+        <ConfigProvider locale={zhCN} componentSize={"middle"} input={{autoComplete: 'off'}}>
             <Layout className={styles.wrapper}>
                 <Header/>
                 <Content className={styles.content}>{children}</Content>

@@ -11,7 +11,16 @@ export const request: RequestConfig = {
     // prefix: 'http://192.168.0.220',
     timeout: 3000,
     middlewares: [],
-    requestInterceptors: [],
+    requestInterceptors: [function (url, config:any) {
+        if( url !== '/api/pass/login'){
+            const token = localStorage.getItem('token');
+            config.headers['token'] = token;
+        }
+        return {
+            url,
+            config
+        }
+    }],
     responseInterceptors: [async function (response) {
         const codeMaps: any = {
             403: '没有权限',

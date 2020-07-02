@@ -46,10 +46,10 @@ const UserModel: UserModelType = {
             return yield call(userService.saveUser, {...payload});
         },
         * editUser({payload}, {call}) {
-           return yield call(userService.updateUser, {...payload});
+            return yield call(userService.updateUser, {...payload});
         },
         * delUser({payload}, {call}) {
-           return yield call(userService.deleteUser, {...payload});
+            return yield call(userService.deleteUser, {...payload});
         }
     },
     reducers: {

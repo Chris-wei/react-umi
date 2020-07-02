@@ -9,6 +9,9 @@ export default defineConfig({
     cssLoader: {
         localsConvention: 'camelCase'
     },
+    dynamicImport: {
+        loading: "@/Loading"
+    },
     hash: true,
     dva: {
         hmr: true,  //启用 dva model 的热更新。

@@ -1,3 +1,4 @@
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE1MTYyMzkwMjJ9.pM2dY8NDjp6CpmvepqPXgDOXLHqTjZqGEK95vtmGUlw';
 export default {
     // 登录
     'POST /api/pass/login': (req: any, res: any) => {
@@ -9,7 +10,8 @@ export default {
         if (username === 'admin' && password === '123456') {
             res.end(JSON.stringify({
                 err_code: 0,
-                msg: 'ok'
+                msg: 'ok',
+                data: token
             }))
         } else {
             res.end(JSON.stringify({
